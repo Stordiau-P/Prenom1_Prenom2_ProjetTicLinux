@@ -23,7 +23,7 @@ while true; do # Boucle infinie pour relancer le programme tant que l'utilisateu
         else
             echo "Aucune tâche ajoutée"
         fi
-    elif [[ "$user_input" == "3" ]]; then
+    elif [[ "$user_input" == "3" ]]; then #Si l'utilisateur choisit le 3 la liste s'affiche et il peut entre le numéro de la tâche a supprimer il est obligé de choisir une entrée valide sinon il a une erreur
         if [[ -s $task_file ]]; then
             nl -s ". " "$task_file"
             total_lines=$(wc -l < "$task_file")
