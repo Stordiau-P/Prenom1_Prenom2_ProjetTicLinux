@@ -40,13 +40,13 @@ while true; do # Boucle infinie pour relancer le programme tant que l'utilisateu
             echo "Il n'y a aucune tâche à supprimer."
         fi
 
-    elif [[ "$user_input" == "4" ]]; then
+    elif [[ "$user_input" == "4" ]]; then #Si l'utilisateur choisit 4 on lui demande s'il veut quitter le programme
         read -p "Voulez-vous quitter le programme ? (oui/non) " quit_choice
         if [[ "$quit_choice" == "oui" ]]; then
             echo "Fin du programme"
             break
         fi
-    elif [[ "$user_input" == "5" ]]; then
+    elif [[ "$user_input" == "5" ]]; then #Si l'utilisateur choisit 5 il supprime toute la liste du fichier"
         > "$task_file"
         echo "Toutes les tâches ont été supprimées."
     else
