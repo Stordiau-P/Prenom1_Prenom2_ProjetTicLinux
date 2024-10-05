@@ -15,7 +15,7 @@ while true; do # Boucle infinie pour relancer le programme tant que l'utilisateu
         else
             nl -s ". " "$task_file"
         fi
-    elif [[ "$user_input" == "2" ]]; then
+    elif [[ "$user_input" == "2" ]]; then # Si l'utilisateur choisit le 2 il peut entrer une tâche qui s'ajoute au fichier ou un message s'affiche s'il ne met rien
         read -p "Veuillez écrire la tâche à exécuter : " task
         if [[ -n "$task" ]]; then
             echo "$task" >> "$task_file"
