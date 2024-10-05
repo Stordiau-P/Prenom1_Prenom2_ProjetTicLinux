@@ -16,7 +16,12 @@ while true; do
         fi
     elif [[ "$user_input" == "2" ]]; then
         read -p "Veuillez écrire la tâche à exécuter : " task
-        echo "Ajout de la tâche : $task"
+        if [[ -n "$task" ]]; then
+            echo "$task" >> "$task_file"
+            echo "Tâche ajoutée."
+        else
+            echo "Aucune tâche ajoutée"
+        fi
     elif [[ "$user_input" == "3" ]]; then
         echo "Veuillez indiquer la tâche à supprimer"
     elif [[ "$user_input" == "4" ]]; then
