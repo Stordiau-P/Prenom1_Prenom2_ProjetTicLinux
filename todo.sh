@@ -1,5 +1,5 @@
 #!/bin/bash
-task_file="tasks.txt"
+task_file="tasks.txt" # Définit le nom du fichier où les tâches seront stockées
 while true; do
     echo "Bonjour, veuillez choisir une action à réaliser en tapant 1, 2 ou 3"
     echo "1. Afficher la liste des tâches"
