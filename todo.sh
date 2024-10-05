@@ -23,14 +23,21 @@ while true; do
             echo "Aucune tâche ajoutée"
         fi
     elif [[ "$user_input" == "3" ]]; then
-        if [[ -s $task_file ]]; then
-            nl -s ". " "$task_file"
-            read -p "Veuillez indiquer le numéro de la tâche à supprimer : " task_number
+    if [[ -s $task_file ]]; then
+        nl -s ". " "$task_file"
+        total_lines=$(wc -l < "$task_file")
+        
+        read -p "Veuillez indiquer le numéro de la tâche à supprimer : " task_number
+        
+        if [[ "$task_number" =~ ^[0-9]+$ && "$task_number" -ge 1 && "$task_number" -le "$total_lines" ]]; then
             sed -i "${task_number}d" "$task_file"
             echo "Tâche numéro $task_number supprimée."
         else
-            echo "Il n'y a aucune tâche à supprimer."
+            echo "Numéro de tâche invalide. Veuillez entrer un numéro entre 1 et $total_lines."
         fi
+    else
+        echo "Il n'y a aucune tâche à supprimer."
+    fi
 
     elif [[ "$user_input" == "4" ]]; then
         read -p "Voulez-vous quitter le programme ? (oui/non) " quit_choice
