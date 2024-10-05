@@ -23,7 +23,15 @@ while true; do
             echo "Aucune tâche ajoutée"
         fi
     elif [[ "$user_input" == "3" ]]; then
-        echo "Veuillez indiquer la tâche à supprimer"
+        if [[ -s $task_file ]]; then
+            nl -s ". " "$task_file"
+            read -p "Veuillez indiquer le numéro de la tâche à supprimer : " task_number
+            sed -i "${task_number}d" "$task_file"
+            echo "Tâche numéro $task_number supprimée."
+        else
+            echo "Il n'y a aucune tâche à supprimer."
+        fi
+
     elif [[ "$user_input" == "4" ]]; then
         read -p "Voulez-vous quitter le programme ? (oui/non) " quit_choice
         if [[ "$quit_choice" == "oui" ]]; then
