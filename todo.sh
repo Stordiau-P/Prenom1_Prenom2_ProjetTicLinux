@@ -50,6 +50,6 @@ while true; do # Boucle infinie pour relancer le programme tant que l'utilisateu
         > "$task_file"
         echo "Toutes les tâches ont été supprimées."
     else
-        echo "Option non valide. Veuillez entrer 1, 2, 3, 4 ou 5."
+        echo "Option non valide. Veuillez entrer 1, 2, 3, 4 ou 5." #Si l'utilisateur n'entre pas une des 5 options on le lui indique
     fi
 done
