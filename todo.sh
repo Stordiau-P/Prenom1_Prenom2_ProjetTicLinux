@@ -1,7 +1,7 @@
 #!/bin/bash
 task_file="tasks.txt" # Définit le nom du fichier où les tâches seront stockées
 while true; do # Boucle infinie pour relancer le programme tant que l'utilisateur n'a pas choisis l'option pour quitter"
-    echo "Bonjour, veuillez choisir une action à réaliser en tapant 1, 2 ou 3"
+    echo "Bonjour, veuillez choisir une action à réaliser en tapant 1, 2 ou 3" # Affichage des options
     echo "1. Afficher la liste des tâches"
     echo "2. Ajouter une tâche"
     echo "3. Supprimer une tâche"
