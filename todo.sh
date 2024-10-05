@@ -7,7 +7,7 @@ while true; do # Boucle infinie pour relancer le programme tant que l'utilisateu
     echo "3. Supprimer une tâche"
     echo "4. Quitter le programme"
     echo "5. Supprimer toutes les tâches"
-    read -p "Veuillez entrer votre choix : " user_input
+    read -p "Veuillez entrer votre choix : " user_input # Récupération du choix de l'utilisateur
     if [[ "$user_input" == "1" ]]; then
         echo "Voici la liste des tâches actuelles"
         if [[ ! -s $task_file ]]; then
