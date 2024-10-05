@@ -1,5 +1,5 @@
 #!/bin/bash
-
+task_file="tasks.txt"
 while true; do
     echo "Bonjour, veuillez choisir une action à réaliser en tapant 1, 2 ou 3"
     echo "1. Afficher la liste des tâches"
@@ -9,6 +9,11 @@ while true; do
     read -p "Veuillez entrer votre choix : " user_input
     if [[ "$user_input" == "1" ]]; then
         echo "Voici la liste des tâches actuelles"
+        if [[ ! -s $task_file ]]; then
+            echo "Aucune tâche trouvée."
+        else
+            nl -s ". " "$task_file"
+        fi
     elif [[ "$user_input" == "2" ]]; then
         read -p "Veuillez écrire la tâche à exécuter : " task
         echo "Ajout de la tâche : $task"
